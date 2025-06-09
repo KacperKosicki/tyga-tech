@@ -1,0 +1,46 @@
+@import '../../styles/variables';
+
+.statsSection {
+  position: relative;
+  background: $color-dark-bg;
+  color: $color-text-light;
+  padding: 6rem 1.5rem;
+  text-align: center;
+  overflow: hidden;
+
+  .container {
+    max-width: $max-width;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat {
+    background: lighten($color-dark-bg, 5%);
+    border: 1px solid $color-accent;
+    border-radius: $radius;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    h3 {
+      font-size: 2.4rem;
+      font-family: $font-heading;
+      color: $color-primary;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 500;
+      color: $color-text-light;
+    }
+  }
+}

@@ -4,6 +4,10 @@ import { FaTools, FaHeadset, FaMapMarkerAlt } from 'react-icons/fa';
 const InfoSection = () => {
   return (
     <section className={styles.info}>
+      <div className={styles.bgImageWrapper}>
+        <img src="/images/undraw-mobile-payments.png" alt="" />
+      </div>
+
       <div className={styles.container}>
         <h2>Dlaczego warto wybrać TYGA-TECH?</h2>
         <div className={styles.grid}>
