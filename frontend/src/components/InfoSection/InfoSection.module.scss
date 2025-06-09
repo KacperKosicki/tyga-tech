@@ -80,23 +80,24 @@
 @media (max-width: 768px) {
   .info {
     padding: 6rem 1rem;
-  }
 
-  .bgImageWrapper {
-    top: 220px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 240px;
-    opacity: 0.02;
-    z-index: -1;
-  }
+    .bgImageWrapper {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      opacity: 0.2;
+      z-index: -1;
+    }
 
-  .card {
-    max-width: 100%;
-    padding: 1.5rem;
-  }
+    .card {
+      max-width: 100%;
+      padding: 1.5rem;
+    }
 
-  h2 {
-    font-size: 1.6rem;
+    h2 {
+      font-size: 1.6rem;
+    }
   }
 }
+
