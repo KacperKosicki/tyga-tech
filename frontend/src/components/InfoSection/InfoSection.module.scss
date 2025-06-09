@@ -1,0 +1,57 @@
+@import '../../styles/variables';
+
+.info {
+  background: $color-bg;
+  color: $color-text;
+  padding: 4rem 1.5rem;
+
+  .container {
+    max-width: $max-width;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h2 {
+    font-family: $font-heading;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: $color-text;
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .card {
+    background: #ffffff;
+    border: 1px solid $color-accent;
+    border-radius: $radius;
+    padding: 2rem;
+    flex: 1 1 280px;
+    max-width: 350px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: $color-accent;
+    }
+
+    .icon {
+      font-size: 2rem;
+      color: $color-primary;
+    }
+  }
+}

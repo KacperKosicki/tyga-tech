@@ -1,0 +1,18 @@
+// src/styles/variables.scss
+
+// 🎨 Kolory – branding TYGA-TECH
+$color-bg: #f4f4f0;              // tło główne (jasny beż/szary z baneru FB)
+$color-dark-bg: #2b2b2b;         // tło nawigacji – elegancka czerń
+$color-text: #1a1a1a;            // ciemny, czytelny tekst
+$color-text-light: #ffffff;      // jasny tekst na ciemnym tle
+$color-primary: #e50914;         // czerwony laser (z logotypu)
+$color-accent: #b3b3b3;          // delikatny szary do ramek, linii
+
+// 🔤 Fonty – nowoczesne, lekkie
+$font-main: 'Poppins', sans-serif;     // treść
+$font-heading: 'Outfit', sans-serif;   // nagłówki
+
+// 📐 Layout
+$max-width: 1200px;
+$radius: 10px;
+$transition: 0.3s ease-in-out;

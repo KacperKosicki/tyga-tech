@@ -1,0 +1,85 @@
+@import '../../styles/variables';
+
+.footer {
+  background-color: $color-dark-bg;
+  color: $color-text-light;
+  padding: 3rem 1.5rem 1.5rem;
+  font-size: 0.95rem;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $color-accent;
+  }
+
+  .logoSection img {
+    height: 150px;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    a {
+      color: $color-text-light;
+      text-decoration: none;
+      transition: color $transition;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  .contact {
+    p {
+      margin: 0.3rem 0;
+    }
+  }
+
+  .bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: 0.85rem;
+    color: lighten($color-text-light, 20%);
+  }
+}
+
+.socials {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+
+  a {
+    color: $color-text-light;
+    font-size: 1.2rem;
+    transition: color $transition;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.map {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+
+  iframe {
+    border-radius: $radius;
+    width: 100%;
+    max-width: 100%;
+    height: 180px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}

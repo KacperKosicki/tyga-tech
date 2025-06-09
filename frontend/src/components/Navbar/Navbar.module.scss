@@ -1,0 +1,112 @@
+@import '../../styles/variables';
+
+.navbar {
+  background-color: $color-dark-bg;
+  padding: 1.2rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.container {
+  @extend .container;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  img {
+    height: 150px;
+    max-height: 120px;
+    transition: transform $transition;
+    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.3));
+
+    &:hover {
+      transform: scale(1.07);
+    }
+  }
+}
+
+.navLinks {
+  display: flex;
+  gap: 3rem;
+
+  li a {
+    position: relative;
+    padding: 0.6rem 0;
+    color: $color-text-light;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color $transition;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, $color-primary, lighten($color-primary, 10%));
+      border-radius: 2px;
+      transition: width $transition;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: $color-text-light;
+  cursor: pointer;
+  z-index: 110;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: $color-dark-bg;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem 0;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease;
+    z-index: 99;
+  }
+
+  .navLinks.open {
+    transform: translateY(0);
+  }
+
+  .navLinks li a {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .container {
+    padding: 0 3rem; // lub 2rem jeśli chcesz mocniej odsunąć od krawędzi
+    justify-content: space-between; // lepsze niż space-around na małych ekranach
+  }
+}

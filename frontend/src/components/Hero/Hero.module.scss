@@ -1,0 +1,237 @@
+@import '../../styles/variables';
+
+.hero {
+    position: relative;
+    padding: 1.5rem 1.5rem 0;
+    padding-bottom: 10rem;
+    background-color: $color-dark-bg;
+    color: $color-text-light;
+    overflow: hidden;
+    z-index: 0;
+    margin-top: -1px;
+
+    .container {
+        max-width: $max-width;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        position: relative;
+        z-index: 2;
+    }
+
+    .left {
+        flex: 1;
+
+        h1 {
+            font-family: $font-heading;
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #eeeeee;
+        }
+    }
+
+    .right {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 480px;
+            height: 480px;
+            background: radial-gradient(circle, rgba(229, 9, 20, 0.35) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            animation: pulse 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(50px);
+        }
+
+        img {
+            position: relative;
+            max-width: 100%;
+            max-height: 400px;
+            z-index: 1;
+        }
+    }
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  line-height: 0;
+  overflow: hidden;
+  z-index: 2;
+
+  svg {
+    display: block;
+    width: 100vw !important; // 🛠 naprawa szerokości
+    max-width: 100%;
+    height: 100%;
+    fill: $color-bg;
+    margin: 0 !important; // 🔒 bezpieczeństwo
+    padding: 0;
+    line-height: 0;
+    backface-visibility: hidden;
+    transform: translateY(1px); // zostaje
+  }
+}
+
+
+// 🔁 Animacje
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0.35;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+    }
+}
+
+@keyframes beamMove {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+// 🔻 Responsywność – kula na mobile
+@media (max-width: 768px) {
+    .right::before {
+        width: 300px;
+        height: 300px;
+        filter: blur(30px);
+    }
+}
+
+.buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cta,
+.secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.1rem 2rem;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    border-radius: $radius;
+    transition: all $transition;
+    border: 2px solid transparent;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.cta {
+    background-color: $color-primary;
+    color: white;
+    border-color: $color-primary;
+
+    &:hover {
+        background-color: darken($color-primary, 10%);
+    }
+}
+
+.secondary {
+    background-color: transparent;
+    color: $color-primary;
+    border-color: $color-primary;
+
+    &:hover {
+        background-color: rgba($color-primary, 0.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .wave {
+        svg {
+            transform: translateY(1px) scale(1.02); // delikatne powiększenie + przesunięcie
+        }
+    }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    border-top: 0 !important;
+  }
+
+  .navbar {
+    border-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    border-top: 0 !important;
+    overflow-x: hidden; // <--- DODANE
+
+    padding-bottom: 15rem;
+
+    .right {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        width: 300px;
+        height: 300px;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(circle, rgba(229, 9, 20, 0.35) 0%, transparent 70%);
+        animation: pulse 4s infinite ease-in-out;
+        filter: blur(40px);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      img {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%; // <--- DODANE
+        height: auto;
+        max-width: none;
+        opacity: 0.09;
+        pointer-events: none;
+        object-fit: contain;
+      }
+    }
+  }
+}
