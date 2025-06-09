@@ -1,6 +1,7 @@
 import styles from './Home.module.scss';
 import Hero from '../../components/Hero/Hero';
 import InfoSection from '../../components/InfoSection/InfoSection';
+import MiniFAQ from '../../components/MiniFAQ/MiniFAQ';
 
 const Home = () => {
   return (
@@ -8,7 +9,7 @@ const Home = () => {
       <Hero />
       <section className={styles.mainContent}>
         <InfoSection />
-        {/* tutaj możesz dołożyć kolejne sekcje, np. <Oferta /> */}
+        <MiniFAQ />
       </section>
     </>
   );
