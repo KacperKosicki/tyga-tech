@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styles from './ReportForm.module.scss';
-import Hero from '../../components/Hero/Hero';
 
 const ReportForm = () => {
   const [formData, setFormData] = useState({
@@ -22,13 +21,16 @@ const ReportForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // tutaj możesz dodać wysyłkę do API lub wiadomości e-mail
     console.log(formData);
     alert('Zgłoszenie wysłane!');
   };
 
   return (
-    <section className={styles.reportSection}>
+    <section className={`${styles.reportSection} ${styles.fadeIn}`}>
+      <div className={styles.bgImageWrapper}>
+        <img src="/images/undraw-bug-fixing.png" alt="" className={styles.bgImage} />
+      </div>
+
       <div className={styles.container}>
         <h2>Zgłoszenie usterki</h2>
         <form onSubmit={handleSubmit} className={styles.form}>
