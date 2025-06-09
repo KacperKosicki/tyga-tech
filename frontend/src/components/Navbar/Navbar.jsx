@@ -24,6 +24,7 @@ const Navbar = () => {
           <li><Link to="/" onClick={closeMenu}>Strona Główna</Link></li>
           <li><Link to="/oferta" onClick={closeMenu}>Oferta</Link></li>
           <li><Link to="/blog" onClick={closeMenu}>Blog</Link></li>
+          <li><Link to="/o-nas" onClick={closeMenu}>O nas</Link></li>
           <li><Link to="/kontakt" onClick={closeMenu}>Kontakt</Link></li>
           <li><Link to="/zgloszenie" onClick={closeMenu}>Zgłoś usterkę</Link></li> {/* ⬅️ NOWY LINK */}
         </ul>
