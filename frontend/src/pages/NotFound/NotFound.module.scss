@@ -1,0 +1,54 @@
+@import '../../styles/variables';
+
+.notFound {
+  //background-color: $color-dark-bg;
+  color: $color-text-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 2rem;
+
+  .content {
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+    
+    img {
+      max-width: 320px;
+      margin-bottom: 2rem;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: $color-text;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: $color-primary;
+      color: white;
+      padding: 0.9rem 1.6rem;
+      border-radius: $radius;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background $transition;
+
+      &:hover {
+        background: darken($color-primary, 10%);
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

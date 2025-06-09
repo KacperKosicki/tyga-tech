@@ -1,32 +1,49 @@
 @import '../../styles/variables';
 
 .footer {
-  background-color: $color-dark-bg;
+  background: $color-dark-bg;
   color: $color-text-light;
-  padding: 3rem 1.5rem 1.5rem;
   font-size: 0.95rem;
+  padding-top: 4rem;
 
-  .top {
+  .content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     flex-wrap: wrap;
     gap: 2rem;
     max-width: $max-width;
     margin: 0 auto;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid $color-accent;
+    padding: 0 1.5rem 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .logoSection img {
-    height: 150px;
-    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+  .column {
+    flex: 1;
+    min-width: 220px;
+
+    h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: $color-primary;
+    }
+
+    p {
+      margin-top: 1rem;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+  }
+
+  .logo {
+    height: 80px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
   }
 
   .links {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.6rem;
 
     a {
       color: $color-text-light;
@@ -39,47 +56,75 @@
     }
   }
 
-  .contact {
-    p {
-      margin: 0.3rem 0;
+  .contactInfo {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+
+      svg {
+        color: $color-primary;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .socials {
+    display: flex;
+    gap: 1rem;
+
+    a {
+      color: $color-text-light;
+      font-size: 1.2rem;
+      transition: color $transition;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  .map {
+    margin-top: 2rem;
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: $radius;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
   }
 
   .bottom {
     text-align: center;
-    padding-top: 1.5rem;
     font-size: 0.85rem;
     color: lighten($color-text-light, 20%);
+    padding: 1.5rem;
   }
 }
 
-.socials {
-  margin-top: 1rem;
-  display: flex;
-  gap: 1rem;
-
-  a {
-    color: $color-text-light;
-    font-size: 1.2rem;
-    transition: color $transition;
-
-    &:hover {
-      color: $color-primary;
+@media (max-width: 768px) {
+  .footer {
+    .content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
-  }
-}
 
-.map {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  display: flex;
-  justify-content: center;
+    .logo {
+      height: 70px;
+    }
 
-  iframe {
-    border-radius: $radius;
-    width: 100%;
-    max-width: 100%;
-    height: 180px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    .contactInfo li {
+      justify-content: center;
+    }
   }
 }

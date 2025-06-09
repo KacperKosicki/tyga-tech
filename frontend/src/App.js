@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import ReportForm from './pages/ReportForm/ReportForm'; // <--- nasz formularz
 import AboutUs from './pages/AboutUs/AboutUs';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/zgloszenie" element={<ReportForm />} />
         <Route path="/o-nas" element={<AboutUs />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>
