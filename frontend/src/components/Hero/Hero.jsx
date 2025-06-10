@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
-        <div className={styles.left}>
+        <div className={styles.left} data-aos="fade-right">
           <h1>SERWIS URZĄDZEŃ LASEROWYCH</h1>
           <p>Naprawa, wsparcie techniczne i konserwacja urządzeń laserowych w całej Polsce.</p>
 
@@ -20,9 +20,10 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className={styles.right}>
+        <div className={styles.right} data-aos="fade-left">
           <img src="/images/hero-image.png" alt="Laser Illustration" />
         </div>
+
       </div>
 
       <div className={styles.wave}>

@@ -79,20 +79,18 @@
 
     svg {
         display: block;
-        width: 100vw !important; // 🛠 naprawa szerokości
+        width: 100vw !important;
         max-width: 100%;
         height: 100%;
         fill: $color-bg;
-        margin: 0 !important; // 🔒 bezpieczeństwo
+        margin: 0 !important;
         padding: 0;
         line-height: 0;
         backface-visibility: hidden;
-        transform: translateY(1px); // zostaje
+        transform: translateY(1px);
     }
 }
 
-
-// 🔁 Animacje
 @keyframes pulse {
     0% {
         transform: translate(-50%, -50%) scale(1);
@@ -120,7 +118,6 @@
     }
 }
 
-// 🔻 Responsywność – kula na mobile
 @media (max-width: 768px) {
     .right::before {
         width: 300px;
@@ -151,7 +148,6 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-
 .cta {
     background-color: $color-primary;
     color: white;
@@ -176,7 +172,7 @@
 @media (max-width: 768px) {
     .wave {
         svg {
-            transform: translateY(1px) scale(1.02); // delikatne powiększenie + przesunięcie
+            transform: translateY(1px) scale(1.02);
         }
     }
 }
@@ -194,7 +190,7 @@
 @media (max-width: 768px) {
     .hero {
         border-top: 0 !important;
-        overflow-x: hidden; // <--- DODANE
+        overflow-x: hidden;
         padding-bottom: 18rem;
 
         .right {
@@ -204,7 +200,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            pointer-events: none; // 💥 kluczowe!
+            pointer-events: none;
 
             &::before {
                 content: '';
@@ -226,7 +222,7 @@
                 top: 100%;
                 left: 75%;
                 transform: translate(-50%, -50%);
-                width: 100%; // <--- DODANE
+                width: 100%;
                 height: auto;
                 max-width: none;
                 opacity: 0.09;

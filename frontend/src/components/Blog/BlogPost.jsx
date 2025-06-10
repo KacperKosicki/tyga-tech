@@ -23,7 +23,7 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div className={styles.notFound}>
+      <div className={styles.notFound} data-aos="fade-up">
         <img src="/images/undraw-notify.png" alt="Post not found" />
         <h2>Ups! Nie znaleźliśmy takiego wpisu.</h2>
         <p>Być może został on usunięty lub zmienił adres.</p>
@@ -32,10 +32,11 @@ const BlogPost = () => {
         </Link>
       </div>
     );
+
   }
 
   return (
-    <div className={styles.post}>
+    <div className={styles.post} data-aos="fade-up">
       <div className="container">
         <h1>{post.title}</h1>
         <p>{post.content}</p>
@@ -43,6 +44,7 @@ const BlogPost = () => {
       </div>
     </div>
   );
+
 };
 
 export default BlogPost;
