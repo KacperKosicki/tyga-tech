@@ -26,14 +26,27 @@ const ReportForm = () => {
   };
 
   return (
-    <section className={`${styles.reportSection} ${styles.fadeIn}`}>
-      <div className={styles.bgImageWrapper}>
-        <img src="/images/undraw-bug-fixing.png" alt="" className={styles.bgImage} />
+    <section className={`${styles.reportSection}`}>
+      <div
+        className={styles.bgImageWrapper}
+        data-aos="fade-left"
+        data-aos-delay="0"
+      >
+        <img
+          src="/images/undraw-bug-fixing.png"
+          alt=""
+          className={styles.bgImage}
+        />
       </div>
 
       <div className={styles.container}>
-        <h2>Zgłoszenie usterki</h2>
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <h2 data-aos="fade-up" data-aos-delay="100">Zgłoszenie usterki</h2>
+        <form
+          onSubmit={handleSubmit}
+          className={styles.form}
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           <input type="text" name="name" placeholder="Imię" required onChange={handleChange} />
           <input type="text" name="company" placeholder="Nazwa firmy" onChange={handleChange} />
           <input type="tel" name="phone" placeholder="Numer telefonu" required onChange={handleChange} />

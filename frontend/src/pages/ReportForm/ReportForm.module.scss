@@ -12,7 +12,6 @@
     top: 100px;
     right: 0;
     width: 600px;
-    opacity: 0.05;
     pointer-events: none;
     z-index: 0;
 
@@ -22,6 +21,11 @@
       display: block;
       object-fit: contain;
       filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+      opacity: 0.05;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
     }
   }
 
@@ -75,21 +79,6 @@
       }
     }
   }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fadeIn {
-  animation: fadeIn 0.8s ease-out;
 }
 
 @media (max-width: 768px) {
