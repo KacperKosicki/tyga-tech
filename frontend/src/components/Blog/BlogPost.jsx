@@ -23,11 +23,25 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div className={styles.notFound} data-aos="fade-up">
-        <img src="/images/undraw-notify.png" alt="Post not found" />
-        <h2>Ups! Nie znaleźliśmy takiego wpisu.</h2>
-        <p>Być może został on usunięty lub zmienił adres.</p>
-        <Link to="/blog" className={styles.button}>
+      <div className={styles.notFound}>
+        <img
+          src="/images/undraw-notify.png"
+          alt="Post not found"
+          data-aos="zoom-in"
+          data-aos-delay="0"
+        />
+        <h2 data-aos="fade-up" data-aos-delay="150">
+          Ups! Nie znaleźliśmy takiego wpisu.
+        </h2>
+        <p data-aos="fade-up" data-aos-delay="300">
+          Być może został on usunięty lub zmienił adres.
+        </p>
+        <Link
+          to="/blog"
+          className={styles.button}
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           Wróć do bloga
         </Link>
       </div>
