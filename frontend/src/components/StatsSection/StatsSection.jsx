@@ -6,7 +6,7 @@ const StatsSection = () => {
     { value: 500, label: 'Naprawionych urządzeń' },
     { value: 10, label: 'Lat doświadczenia' },
     { value: 24, label: 'Czas reakcji (h)' },
-    { value: 100, label: 'Zadowolonych klientów (%)' },
+    { value: 100, label: 'Zadowolonych klientów' },
   ];
 
   return (
@@ -17,10 +17,11 @@ const StatsSection = () => {
             key={i}
             className={styles.stat}
             data-aos="fade-up"
-            data-aos-delay={i * 150} // każde kolejne opóźnione o 150ms
+            data-aos-delay={i * 150}
           >
             <h3>
-              <CountUp end={s.value} duration={2} />{s.label.includes('%') ? '' : '+'}
+              <CountUp end={s.value} duration={2} />
+              {s.value === 100 ? '%' : '+'}
             </h3>
             <p>{s.label}</p>
           </div>
