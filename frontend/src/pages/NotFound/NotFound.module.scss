@@ -1,28 +1,29 @@
 @import '../../styles/variables';
 
 .notFound {
-  //background-color: $color-dark-bg;
-  color: $color-text-light;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
-  padding: 2rem;
+  padding: 5rem 2rem;
+  text-align: center;
 
   .content {
     text-align: center;
     animation: fadeIn 0.8s ease;
-    
+
     img {
-      max-width: 320px;
-      margin-bottom: 2rem;
-      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+      max-width: 300px;
+      margin: 0 auto 2rem;
+      opacity: 0.8;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: $color-primary;
+      margin-bottom: 1rem;
     }
 
     p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
+      font-size: 1rem;
       color: $color-text;
+      margin-bottom: 2rem;
     }
 
     .button {
@@ -46,6 +47,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

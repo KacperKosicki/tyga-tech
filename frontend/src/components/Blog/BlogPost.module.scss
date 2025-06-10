@@ -1,0 +1,66 @@
+@import '../../styles/variables';
+
+.notFound {
+  padding: 5rem 2rem;
+  text-align: center;
+
+  img {
+    max-width: 300px;
+    margin: 0 auto 2rem;
+    opacity: 0.8;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    color: $color-primary;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: $color-text;
+    margin-bottom: 2rem;
+  }
+
+  .button {
+    background: $color-primary;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    transition: background-color $transition;
+
+    &:hover {
+      background: darken($color-primary, 10%);
+    }
+  }
+}
+
+.post {
+  padding: 4rem 0;
+
+  h1 {
+    font-size: 2rem;
+    font-family: $font-heading;
+    color: $color-primary;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: $color-text;
+    margin-bottom: 2rem;
+  }
+
+  .back {
+    display: inline-block;
+    color: $color-primary;
+    font-weight: bold;
+    transition: color $transition;
+
+    &:hover {
+      color: darken($color-primary, 10%);
+    }
+  }
+}
