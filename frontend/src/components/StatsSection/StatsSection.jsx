@@ -13,7 +13,12 @@ const StatsSection = () => {
     <section className={styles.statsSection}>
       <div className={styles.container}>
         {stats.map((s, i) => (
-          <div key={i} className={styles.stat}>
+          <div
+            key={i}
+            className={styles.stat}
+            data-aos="fade-up"
+            data-aos-delay={i * 150} // każde kolejne opóźnione o 150ms
+          >
             <h3>
               <CountUp end={s.value} duration={2} />{s.label.includes('%') ? '' : '+'}
             </h3>
