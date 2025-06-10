@@ -5,15 +5,23 @@ import styles from './BlogPost.module.scss';
 const contentMap = {
   '1': {
     title: 'Jak dbać o urządzenia laserowe?',
-    content: 'Aby dbać o urządzenia laserowe, należy regularnie je czyścić, kontrolować chłodzenie i kalibrację. Warto także unikać przegrzewania oraz wykorzystywać sprzęt zgodnie z zaleceniami producenta...',
+    content:
+      'Aby dbać o urządzenia laserowe, należy regularnie je czyścić, kontrolować chłodzenie i kalibrację. Warto także unikać przegrzewania oraz wykorzystywać sprzęt zgodnie z zaleceniami producenta...',
   },
   '2': {
     title: 'Typowe usterki i jak ich unikać',
-    content: 'Najczęstsze problemy to zabrudzone soczewki, uszkodzone moduły zasilania czy problemy z chłodzeniem. Unikniesz ich poprzez regularne przeglądy i korzystanie z urządzenia w odpowiednich warunkach...',
+    content:
+      'Najczęstsze problemy to zabrudzone soczewki, uszkodzone moduły zasilania czy problemy z chłodzeniem. Unikniesz ich poprzez regularne przeglądy i korzystanie z urządzenia w odpowiednich warunkach...',
   },
   '3': {
     title: 'Dlaczego warto zlecić serwis profesjonalistom?',
-    content: 'Samodzielne naprawy mogą skutkować pogorszeniem stanu urządzenia. Profesjonalny serwis to bezpieczeństwo, gwarancja i dokładna diagnostyka usterek...',
+    content:
+      'Samodzielne naprawy mogą skutkować pogorszeniem stanu urządzenia. Profesjonalny serwis to bezpieczeństwo, gwarancja i dokładna diagnostyka usterek...',
+  },
+  '4': {
+    title: '5 sygnałów, że czas na przegląd maszyny',
+    content:
+      'Głośna praca, spadek precyzji, nierównomierne cięcia, przegrzewanie się lub komunikaty o błędach – te objawy wskazują, że czas na profesjonalny przegląd techniczny. Regularna diagnostyka pozwala uniknąć kosztownych awarii...',
   },
 };
 

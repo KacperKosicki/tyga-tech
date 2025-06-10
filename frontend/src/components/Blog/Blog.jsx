@@ -27,6 +27,15 @@ const blogPosts = [
     tags: ['serwis', 'eksperci'],
     date: '2025-06-15',
   },
+  {
+    id: '4',
+    title: '5 sygnałów, że czas na przegląd maszyny',
+    excerpt: 'Nie ignoruj tych objawów – mogą prowadzić do poważnych awarii. Sprawdź, kiedy reagować.',
+    image: '/blog/blog-4.jpg',
+    tags: ['przegląd', 'awarie', 'serwis'],
+    date: '2025-06-08',
+  },
+
 ];
 
 // zbierz unikalne tagi
