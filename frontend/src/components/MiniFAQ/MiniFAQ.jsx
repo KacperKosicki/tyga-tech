@@ -23,7 +23,8 @@ const MiniFAQ = () => {
   return (
     <section className={styles.faqSection}>
       <div className={styles.container}>
-        <h2>Najczęstsze pytania</h2>
+        <h2 data-aos="fade-up">Najczęstsze pytania</h2>
+
         <ul className={styles.faqList}>
           {faqs.map((faq, i) => (
             <li
