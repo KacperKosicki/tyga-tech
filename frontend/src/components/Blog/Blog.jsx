@@ -25,7 +25,7 @@ const blogPosts = [
     excerpt: 'Samodzielne naprawy mogą pogorszyć stan sprzętu – sprawdź, dlaczego warto zaufać ekspertom.',
     image: '/blog/blog-3.jpg',
     tags: ['serwis', 'eksperci'],
-    date: '2025-06-15',
+    date: '2025-06-02',
   },
   {
     id: '4',
@@ -38,7 +38,14 @@ const blogPosts = [
 
 ];
 
-// zbierz unikalne tagi
+const isNewPost = (postDate, days = 7) => {
+  const now = new Date();
+  const post = new Date(postDate);
+  const diffTime = now - post;
+  const diffDays = diffTime / (1000 * 60 * 60 * 24);
+  return diffDays < days;
+};
+
 const tagCounts = blogPosts.reduce((acc, post) => {
   post.tags.forEach(tag => {
     acc[tag] = (acc[tag] || 0) + 1;
@@ -95,6 +102,9 @@ const Blog = () => {
                 data-aos="fade-up"
                 data-aos-delay={index * 300}
               >
+                {isNewPost(post.date) && (
+                  <div className={styles.fakeBadge}>NOWY POST!</div>
+                )}
                 <div className={styles.imageWrapper}>
                   <img src={post.image} alt={post.title} />
                 </div>
@@ -112,9 +122,7 @@ const Blog = () => {
                       </li>
                     ))}
                   </ul>
-
                   <div className={styles.separator}></div>
-
                   <Link to={`/blog/${post.id}`} className={styles.button}>
                     Czytaj więcej...
                   </Link>

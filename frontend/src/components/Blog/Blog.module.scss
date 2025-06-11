@@ -108,6 +108,23 @@
   }
 }
 
+.fakeBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $color-primary;
+  color: $color-text-light;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0 0 0 10px;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
 .imageWrapper {
   width: 100%;
   height: 220px;
