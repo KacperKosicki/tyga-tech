@@ -75,14 +75,14 @@ const Blog = () => {
       <div className="container">
         <div className={styles.layout}>
           <aside className={styles.sidebar} data-aos="fade-right">
-            <h3>Tagi</h3>
             <ul>
               <li
                 className={!selectedTag ? styles.active : ''}
                 onClick={() => setSelectedTag(null)}
               >
-                Wszystkie ({blogPosts.length})
+                Wszystkie posty ({blogPosts.length})
               </li>
+              <h3>Tagi</h3>
               {allTags.map((tag) => (
                 <li
                   key={tag}

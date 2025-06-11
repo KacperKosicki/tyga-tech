@@ -9,8 +9,8 @@
 
 .bgImageWrapper {
   position: absolute;
-  top: 400px;
-  left: 0;
+  top: 380px;
+  left: -75px;
   z-index: 0;
   pointer-events: none;
 
@@ -45,7 +45,6 @@
   padding: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
-  top: 2rem;
 
   @media (max-width: 768px) {
     position: static;
@@ -54,7 +53,7 @@
 
   h3 {
     font-size: 1.1rem;
-    margin-bottom: 1rem;
+    margin-top: 0.5rem;
     font-family: $font-heading;
     color: $color-primary;
   }
