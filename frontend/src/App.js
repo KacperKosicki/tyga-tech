@@ -13,6 +13,7 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import NotFound from './pages/NotFound/NotFound';
 import Blog from './components/Blog/Blog';
 import BlogPost from './components/Blog/BlogPost';
+import Contact from './components/Contact/Contact';
 
 function App() {
   useEffect(() => {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/o-nas" element={<AboutUs />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPost />} />
+        <Route path="/kontakt" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
