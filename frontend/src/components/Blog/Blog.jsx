@@ -79,32 +79,55 @@ const Blog = () => {
                 {isNewPost(post.date) && (
                   <div className={styles.fakeBadge}>NOWY POST!</div>
                 )}
+
+                {/* Fallback: placeholder jeśli brak obrazka */}
                 <div className={styles.imageWrapper}>
-                  <img src={post.image || '/images/placeholder.jpg'} alt={post.title} />
+                  <img
+                    src={post.image || '/blog/no-image.png'}
+                    alt={post.title || 'Brak tytułu'}
+                  />
+
                 </div>
+
                 <div className={styles.content}>
+                  {/* Fallback: jeśli brak daty */}
                   <div className={styles.meta}>
                     <span>
                       {post.date
                         ? new Date(post.date).toLocaleDateString('pl-PL')
-                        : 'Brak daty'}
+                        : 'Brak daty publikacji'}
                     </span>
                   </div>
-                  <h2>{post.title}</h2>
-                  <p>{post.excerpt}</p>
 
-                  <ul className={styles.tags}>
-                    {post.tags?.map((tag, i) => (
-                      <li key={i}>
-                        <span>🏷️</span> {tag}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Fallback: brak tytułu */}
+                  <h2>{post.title || 'Brak tytułu'}</h2>
+
+                  {/* Fallback: brak zajawki */}
+                  <p>{post.excerpt || 'Brak opisu tego wpisu.'}</p>
+
+                  {/* Fallback: brak tagów */}
+                  {post.tags?.length ? (
+                    <ul className={styles.tags}>
+                      {post.tags.map((tag, i) => (
+                        <li key={i}>
+                          <span>🏷️</span> {tag}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className={styles.noTags}>Brak tagów</p>
+                  )}
 
                   <div className={styles.separator}></div>
-                  <Link to={`/blog/${post.slug?.current}`} className={styles.button}>
-                    Czytaj więcej...
-                  </Link>
+
+                  {/* Fallback: jeśli brak slug */}
+                  {post.slug?.current ? (
+                    <Link to={`/blog/${post.slug.current}`} className={styles.button}>
+                      Czytaj więcej...
+                    </Link>
+                  ) : (
+                    <span className={styles.buttonDisabled}>Brak linku do posta</span>
+                  )}
                 </div>
               </div>
             ))}

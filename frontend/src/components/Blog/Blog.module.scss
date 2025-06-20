@@ -201,3 +201,21 @@
     background-color: darken($color-primary, 10%);
   }
 }
+
+.noTags {
+  font-size: 0.9rem;
+  color: $color-accent;
+  margin-bottom: 1rem;
+}
+
+.buttonDisabled {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: gray;
+  color: white;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  text-align: center;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
