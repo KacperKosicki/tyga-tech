@@ -24,20 +24,6 @@ const AboutUs = () => {
           <li>Doradztwo inżynieryjne i projektowanie techniczne</li>
           <li>Sprzedaż części zamiennych i akcesoriów</li>
         </ul>
-
-        <div className={styles.team} data-aos="fade-up" data-aos-delay="200">
-          <h3>Zarząd firmy</h3>
-          <div className={styles.members}>
-            <div className={styles.member} data-aos="fade-up" data-aos-delay="300">
-              <h4>Krzysztof Remigiusz Wiza</h4>
-              <p>Prezes Zarządu</p>
-            </div>
-            <div className={styles.member} data-aos="fade-up" data-aos-delay="400">
-              <h4>Izabela Wiza</h4>
-              <p>Wspólnik</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -1,42 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import sanityClient from '../../lib/sanityClient';
 import styles from './Blog.module.scss';
-
-const blogPosts = [
-  {
-    id: '1',
-    title: 'Jak dbać o urządzenia laserowe?',
-    excerpt: 'Poznaj najlepsze praktyki konserwacji i przedłuż żywotność swojego sprzętu.',
-    image: '/blog/blog-1.jpg',
-    tags: ['konserwacja', 'laser', 'porady'],
-    date: '2025-06-10',
-  },
-  {
-    id: '2',
-    title: 'Typowe usterki i jak ich unikać',
-    excerpt: 'Dowiedz się, które awarie są najczęstsze i co możesz zrobić, by ich uniknąć.',
-    image: '/blog/blog-2.jpg',
-    tags: ['usterki', 'diagnostyka'],
-    date: '2025-06-09',
-  },
-  {
-    id: '3',
-    title: 'Dlaczego warto zlecić serwis profesjonalistom?',
-    excerpt: 'Samodzielne naprawy mogą pogorszyć stan sprzętu – sprawdź, dlaczego warto zaufać ekspertom.',
-    image: '/blog/blog-3.jpg',
-    tags: ['serwis', 'eksperci'],
-    date: '2025-06-02',
-  },
-  {
-    id: '4',
-    title: '5 sygnałów, że czas na przegląd maszyny',
-    excerpt: 'Nie ignoruj tych objawów – mogą prowadzić do poważnych awarii. Sprawdź, kiedy reagować.',
-    image: '/blog/blog-4.jpg',
-    tags: ['przegląd', 'awarie', 'serwis'],
-    date: '2025-06-08',
-  },
-
-];
 
 const isNewPost = (postDate, days = 7) => {
   const now = new Date();
@@ -46,40 +11,48 @@ const isNewPost = (postDate, days = 7) => {
   return diffDays < days;
 };
 
-const tagCounts = blogPosts.reduce((acc, post) => {
-  post.tags.forEach(tag => {
-    acc[tag] = (acc[tag] || 0) + 1;
-  });
-  return acc;
-}, {});
-
-const allTags = Object.keys(tagCounts);
-
 const Blog = () => {
+  const [blogPosts, setBlogPosts] = useState([]);
   const [selectedTag, setSelectedTag] = useState(null);
 
+  useEffect(() => {
+    sanityClient
+      .fetch(`*[_type == "post"] | order(date desc) {
+        _id,
+        title,
+        slug,
+        excerpt,
+        date,
+        tags,
+        "image": image.asset->url
+      }`)
+      .then(setBlogPosts)
+      .catch(console.error);
+  }, []);
+
+  const tagCounts = blogPosts.reduce((acc, post) => {
+    post.tags?.forEach(tag => {
+      acc[tag] = (acc[tag] || 0) + 1;
+    });
+    return acc;
+  }, {});
+
+  const allTags = Object.keys(tagCounts);
+
   const filteredPosts = selectedTag
-    ? blogPosts.filter(post => post.tags.includes(selectedTag))
+    ? blogPosts.filter(post => post.tags?.includes(selectedTag))
     : blogPosts;
 
   return (
     <section className={styles.blog}>
-      <div
-        className={styles.bgImageWrapper}
-        data-aos="fade-up"
-        data-aos-delay="200"
-        data-aos-duration="800"
-      >
+      <div className={styles.bgImageWrapper} data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
         <img src="/images/undraw-mobile-payments.png" alt="" />
       </div>
       <div className="container">
         <div className={styles.layout}>
           <aside className={styles.sidebar} data-aos="fade-right">
             <ul>
-              <li
-                className={!selectedTag ? styles.active : ''}
-                onClick={() => setSelectedTag(null)}
-              >
+              <li className={!selectedTag ? styles.active : ''} onClick={() => setSelectedTag(null)}>
                 Wszystkie posty ({blogPosts.length})
               </li>
               <h3>Tagi</h3>
@@ -94,10 +67,11 @@ const Blog = () => {
               ))}
             </ul>
           </aside>
+
           <div className={styles.grid}>
             {filteredPosts.map((post, index) => (
               <div
-                key={post.id}
+                key={post._id}
                 className={styles.card}
                 data-aos="fade-up"
                 data-aos-delay={index * 300}
@@ -106,24 +80,29 @@ const Blog = () => {
                   <div className={styles.fakeBadge}>NOWY POST!</div>
                 )}
                 <div className={styles.imageWrapper}>
-                  <img src={post.image} alt={post.title} />
+                  <img src={post.image || '/images/placeholder.jpg'} alt={post.title} />
                 </div>
                 <div className={styles.content}>
                   <div className={styles.meta}>
-                    <span>{new Date(post.date).toLocaleDateString('pl-PL')}</span>
+                    <span>
+                      {post.date
+                        ? new Date(post.date).toLocaleDateString('pl-PL')
+                        : 'Brak daty'}
+                    </span>
                   </div>
                   <h2>{post.title}</h2>
                   <p>{post.excerpt}</p>
 
                   <ul className={styles.tags}>
-                    {post.tags.map((tag, i) => (
+                    {post.tags?.map((tag, i) => (
                       <li key={i}>
                         <span>🏷️</span> {tag}
                       </li>
                     ))}
                   </ul>
+
                   <div className={styles.separator}></div>
-                  <Link to={`/blog/${post.id}`} className={styles.button}>
+                  <Link to={`/blog/${post.slug?.current}`} className={styles.button}>
                     Czytaj więcej...
                   </Link>
                 </div>

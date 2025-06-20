@@ -33,7 +33,7 @@ function App() {
         <Route path="/zgloszenie" element={<ReportForm />} />
         <Route path="/o-nas" element={<AboutUs />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:id" element={<BlogPost />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/kontakt" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
