@@ -14,7 +14,7 @@ const AboutUs = () => {
 
       <div className={styles.container}>
         <p data-aos="fade-up" data-aos-delay="0">
-          <strong>TYGA‑TECH Sp. z o.o.</strong> to dynamicznie rozwijająca się firma z siedzibą w Krzyżu Wielkopolskim, specjalizująca się w serwisie, naprawach i instalacjach maszyn przemysłowych. Naszym celem jest dostarczanie niezawodnych i nowoczesnych rozwiązań technicznych dla klientów z całej Polski.
+          <strong>TYGA‑TECH Sp. z o.o.</strong> to dynamicznie rozwijająca się firma z siedzibą w <strong>Krzyżu Wielkopolskim</strong>, specjalizująca się w serwisie, naprawach i instalacjach maszyn przemysłowych. Naszym celem jest dostarczanie niezawodnych i nowoczesnych rozwiązań technicznych dla klientów z <strong>całej Polski</strong>.
         </p>
 
         <ul data-aos="fade-up" data-aos-delay="100">

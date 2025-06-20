@@ -7,6 +7,7 @@ const ReportForm = () => {
     company: '',
     phone: '',
     email: '',
+    model: '',
     description: '',
     file: null,
   });
@@ -47,10 +48,11 @@ const ReportForm = () => {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          <input type="text" name="name" placeholder="Imię" required onChange={handleChange} />
+          <input type="text" name="name" placeholder="Imię i nazwisko" required onChange={handleChange} />
           <input type="text" name="company" placeholder="Nazwa firmy" onChange={handleChange} />
           <input type="tel" name="phone" placeholder="Numer telefonu" required onChange={handleChange} />
           <input type="email" name="email" placeholder="Adres email" required onChange={handleChange} />
+          <input type="text" name="model" placeholder="Model maszyny" onChange={handleChange} />
           <textarea name="description" placeholder="Opis usterki..." required rows={5} onChange={handleChange}></textarea>
           <input type="file" name="file" accept="image/*" onChange={handleChange} />
           <button type="submit">Wyślij zgłoszenie</button>
