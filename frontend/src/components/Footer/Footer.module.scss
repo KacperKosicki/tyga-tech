@@ -1,12 +1,31 @@
 @import '../../styles/variables';
 
+.waveTop {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 0;
+
+  svg {
+    display: block;
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    fill: $color-dark-bg; // kolor tła footer
+    transform: translateY(1px);
+  }
+}
+
 .footer {
   position: relative;
   background: $color-dark-bg;
   color: $color-text-light;
   padding: 3rem 1.5rem 1rem;
   font-size: 0.95rem;
-  margin-top: -1px; // niweluje linię nad stopką
+  margin-top: -1px;
+  overflow-x: hidden;
 
   .top {
     display: flex;

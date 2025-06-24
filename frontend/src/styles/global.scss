@@ -44,3 +44,8 @@ img {
   height: auto;
   display: block;
 }
+
+body {
+  overflow-x: hidden !important;
+  position: relative;
+}
