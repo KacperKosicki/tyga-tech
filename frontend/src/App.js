@@ -14,6 +14,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Blog from './components/Blog/Blog';
 import BlogPost from './components/Blog/BlogPost';
 import Contact from './components/Contact/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 
 function App() {
   useEffect(() => {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/kontakt" element={<Contact />} />
+        <Route path="/polityka-prywatnosci" element={<PrivacyPolicy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

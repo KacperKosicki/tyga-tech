@@ -53,6 +53,10 @@ const Footer = () => {
           <p>
             © {new Date().getFullYear()} TYGA-TECH. Wszelkie prawa zastrzeżone.{' '}
             <span className={styles.separator}>|</span>{' '}
+            <Link to="/polityka-prywatnosci" className={styles.privacy}>
+              Polityka prywatności
+            </Link>{' '}
+            <span className={styles.separator}>|</span>{' '}
             Strona zaprojektowana przez{' '}
             <a
               href="https://kacper-kosicki.pl"
