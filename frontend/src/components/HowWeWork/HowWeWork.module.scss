@@ -1,0 +1,65 @@
+@import '../../styles/variables';
+
+.howWeWork {
+  padding: 4rem 2rem;
+  background-color: $color-bg;
+  text-align: center;
+
+  .title {
+    font-family: $font-heading;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: $color-text;
+  }
+
+  .description {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    color: $color-text;
+  }
+
+  .carouselWrapper {
+    max-width: 1032px; // 2 * 500 + gap (16px) + marginesy
+    margin: 0 auto;
+    overflow: hidden; // ← TO JEST KLUCZ
+  }
+
+  .carousel {
+    display: flex;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .slide {
+    flex-shrink: 0;
+    width: 500px;
+    height: 420px;
+    scroll-snap-align: start;
+    border-radius: $radius;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: $radius;
+      display: block;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: auto;
+      scroll-snap-align: center;
+    }
+  }
+}
