@@ -5,13 +5,6 @@ import { FaFacebookF, FaInstagram, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-<div className={styles.waveTop}>
-  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-    <path d="M0,0 C480,80 960,0 1440,80 L1440,0 L0,0 Z" />
-  </svg>
-</div>
-
-
       <div className={styles.top}>
         <div className={styles.logoSection}>
           <img src="/images/tyga-tech-logo-white.png" alt="TYGA-TECH" className={styles.logo} />

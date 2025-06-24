@@ -4,9 +4,10 @@
   position: relative;
   background: $color-dark-bg;
   color: $color-text-light;
-  padding: 8rem 1.5rem 1rem;
+  padding: 3rem 1.5rem 1rem;
   font-size: 0.95rem;
-  
+  margin-top: -1px; // niweluje linię nad stopką
+
   .top {
     display: flex;
     justify-content: space-between;
@@ -122,25 +123,7 @@
   }
 }
 
-.waveTop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  overflow: hidden;
-  line-height: 0;
-  z-index: 1;
-
-  svg {
-    display: block;
-    width: 100%; // <-- ZAMIANA z 100vw
-    height: 100%;
-    fill: $color-bg;
-  }
-}
-
-// ✅ MEDIA QUERY dla mobile
+// RWD
 @media (max-width: 768px) {
   .footer {
     .top {
