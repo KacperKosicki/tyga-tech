@@ -36,7 +36,7 @@ const ReportForm = () => {
   return (
     <section className={styles.reportSection}>
       <div className={styles.bgImageWrapper} data-aos="fade-left">
-        <img src="/images/undraw-bug-fixing.png" alt="" className={styles.bgImage} />
+        <img src="/images/report.png" alt="" className={styles.bgImage} />
       </div>
 
       <div className={styles.container}>

@@ -5,7 +5,7 @@ const InfoSection = () => {
   return (
     <section className={styles.info}>
       <div className={styles.bgImageWrapper} data-aos="fade-left" data-aos-delay="150">
-        <img src="/images/undraw-mobile-payments.png" alt="" />
+        <img src="/images/why-us.png" alt="" />
       </div>
 
       <div className={styles.container}>

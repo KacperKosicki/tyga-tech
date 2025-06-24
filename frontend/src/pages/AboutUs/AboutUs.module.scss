@@ -5,23 +5,21 @@
   background-color: $color-bg;
   padding: 6rem 1.5rem;
   overflow: hidden;
-  animation: fadeIn 0.8s ease-out;
 
   .bgImageWrapper {
     position: absolute;
     top: 150px;
-    right: 20px;
+    right: 0;
     width: 600px;
-    z-index: 0;
+    opacity: 0.5;
     pointer-events: none;
+    z-index: 1;
 
     img {
       width: 100%;
       height: auto;
-      display: block;
       object-fit: contain;
-      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
-      opacity: 0.04;
+      opacity: 0.5;
     }
 
     @media (max-width: 768px) {

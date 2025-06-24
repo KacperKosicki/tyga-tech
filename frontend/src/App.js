@@ -16,6 +16,7 @@ import BlogPost from './components/Blog/BlogPost';
 import Contact from './components/Contact/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import CookiesBanner from './components/CookiesBanner/CookiesBanner';
+import Offer from './pages/Offer/Offer';
 
 function App() {
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/oferta" element={<Offer />} />
         <Route path="/zgloszenie" element={<ReportForm />} />
         <Route path="/o-nas" element={<AboutUs />} />
         <Route path="/blog" element={<Blog />} />

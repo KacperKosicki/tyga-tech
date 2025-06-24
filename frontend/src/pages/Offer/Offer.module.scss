@@ -1,17 +1,17 @@
 @import '../../styles/variables';
 
-.info {
+.offer {
   position: relative;
   background: $color-bg;
   color: $color-text;
-  padding: 8rem 1.5rem;
+  padding: 5rem 1.5rem;
   overflow: hidden;
   z-index: 0;
 
   .bgImageWrapper {
     position: absolute;
     top: 0;
-    left: 50;
+    left: 0;
     width: 600px;
     opacity: 0.5;
     pointer-events: none;
@@ -37,7 +37,7 @@
     z-index: 2;
 
     @media (min-width: 769px) {
-      margin-right: 4rem; // przesuwa całość lekko w lewo
+      margin-right: 4rem;
     }
   }
 
@@ -56,7 +56,7 @@
   }
 
   .card {
-    background: #ffffff;
+    background: #fff;
     border: 1px solid $color-accent;
     border-radius: $radius;
     padding: 2rem;
@@ -84,10 +84,33 @@
       color: $color-primary;
     }
   }
+
+  .contact {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+
+    a {
+      color: $color-primary;
+      text-decoration: underline;
+
+      &:hover {
+        color: darken($color-primary, 10%);
+      }
+    }
+  }
+
+  .seo {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: $color-text;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (max-width: 768px) {
-  .info {
+  .offer {
     padding: 5rem 1rem;
 
     .bgImageWrapper {

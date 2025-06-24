@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <section className={styles.contactSection}>
       <div className={styles.bgImageWrapper} data-aos="fade-left" data-aos-delay="0">
-        <img src="/images/undraw-contact.png" alt="" className={styles.bgImage} />
+        <img src="/images/contact.png" alt="" className={styles.bgImage} />
       </div>
 
       <div className={styles.container}>

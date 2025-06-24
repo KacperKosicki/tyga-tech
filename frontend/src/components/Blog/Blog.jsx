@@ -46,7 +46,7 @@ const Blog = () => {
   return (
     <section className={styles.blog}>
       <div className={styles.bgImageWrapper} data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-        <img src="/images/undraw-mobile-payments.png" alt="" />
+        <img src="/images/blog.png" alt="" />
       </div>
       <div className="container">
         <div className={styles.layout}>

@@ -9,7 +9,7 @@ const AboutUs = () => {
         data-aos="fade-left"
         data-aos-delay="100"
       >
-        <img src="/images/undraw-team-spirit.png" alt="" className={styles.bgImage} />
+        <img src="/images/about-us.png" alt="" className={styles.bgImage} />
       </div>
 
       <div className={styles.container}>

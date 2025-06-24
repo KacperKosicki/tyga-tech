@@ -12,15 +12,14 @@
     top: 100px;
     right: 0;
     width: 600px;
+    opacity: 0.05;
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
 
     img {
       width: 100%;
       height: auto;
-      display: block;
       object-fit: contain;
-      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
       opacity: 0.05;
     }
 
