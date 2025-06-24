@@ -40,15 +40,17 @@ const HowWeWork = () => {
 
   return (
     <section className={styles.howWeWork}>
-      <h2 className={styles.title}>Tak pracujemy w TYGA-TECH</h2>
-      <p className={styles.description}>
+      <h2 className={styles.title} data-aos="fade-down" data-aos-delay="50">
+        Tak pracujemy w TYGA-TECH
+      </h2>
+      <p className={styles.description} data-aos="fade-up" data-aos-delay="100">
         Zajrzyj za kulisy naszej pracy – proces naprawy spawarek laserowych krok po kroku.
       </p>
 
-      <div className={styles.carouselWrapper}>
+      <div className={styles.carouselWrapper} data-aos="fade-left" data-aos-delay="200">
         <div className={styles.carousel} ref={carouselRef}>
           {images.map((img, i) => (
-            <div className={styles.slide} key={i}>
+            <div className={styles.slide} key={i} data-aos="zoom-in" data-aos-delay={100 + i * 50}>
               <img src={img} alt={`Krok ${i + 1}`} />
             </div>
           ))}
