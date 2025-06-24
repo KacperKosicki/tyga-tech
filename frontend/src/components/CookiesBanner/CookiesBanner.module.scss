@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+
+.banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $color-dark-bg;
+  color: $color-text-light;
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+
+  p {
+    margin: 0;
+    flex: 1;
+  }
+
+  button {
+    background: $color-primary;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: $radius;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background: darken($color-primary, 10%);
+    }
+  }
+}

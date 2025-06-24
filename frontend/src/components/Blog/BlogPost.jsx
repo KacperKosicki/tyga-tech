@@ -27,7 +27,7 @@ const BlogPost = () => {
       <section className={styles.notFound}>
         <div className={styles.content}>
           <img
-            src="/images/undraw-page-not-found.png"
+            src="/images/404.png"
             alt="Post not found"
             data-aos="zoom-in"
             data-aos-delay="0"

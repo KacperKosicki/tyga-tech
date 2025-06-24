@@ -15,6 +15,7 @@ import Blog from './components/Blog/Blog';
 import BlogPost from './components/Blog/BlogPost';
 import Contact from './components/Contact/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
+import CookiesBanner from './components/CookiesBanner/CookiesBanner';
 
 function App() {
   useEffect(() => {
@@ -40,6 +41,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      <CookiesBanner />
     </>
   );
 }
