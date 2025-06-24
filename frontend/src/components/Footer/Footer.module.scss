@@ -1,11 +1,12 @@
 @import '../../styles/variables';
 
 .footer {
+  position: relative;
   background: $color-dark-bg;
   color: $color-text-light;
-  padding: 3rem 1.5rem 1rem;
+  padding: 8rem 1.5rem 1rem;
   font-size: 0.95rem;
-
+  
   .top {
     display: flex;
     justify-content: space-between;
@@ -38,59 +39,53 @@
     }
   }
 
-  .links {
-    flex: 1 1 150px;
+  .links,
+  .contact {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
     h4 {
       color: $color-primary;
       margin-bottom: 1rem;
     }
 
-    nav {
+    nav,
+    ul {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      align-items: center;
+    }
 
-      a {
-        color: $color-text-light;
-        text-decoration: none;
-        transition: color 0.3s;
+    a {
+      color: $color-text-light;
+      text-decoration: none;
+      transition: color 0.3s;
 
-        &:hover {
-          color: $color-primary;
-        }
+      &:hover {
+        color: $color-primary;
       }
     }
-  }
 
-  .contact {
-    flex: 1 1 220px;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.5rem;
 
-    h4 {
-      color: $color-primary;
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1rem;
-
-      li {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        margin-bottom: 0.5rem;
-
-        svg {
-          color: $color-primary;
-        }
+      svg {
+        color: $color-primary;
       }
     }
 
     .socials {
       display: flex;
       gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
 
       a {
         font-size: 1.2rem;
@@ -127,16 +122,54 @@
   }
 }
 
+.waveTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+
+  svg {
+    display: block;
+    width: 100%; // <-- ZAMIANA z 100vw
+    height: 100%;
+    fill: $color-bg;
+  }
+}
+
+// ✅ MEDIA QUERY dla mobile
 @media (max-width: 768px) {
   .footer {
     .top {
       flex-direction: column;
+      align-items: center;
       text-align: center;
+      gap: 2.5rem;
+    }
+
+    .logoSection,
+    .links,
+    .contact {
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .contact ul,
+    .links nav {
       align-items: center;
     }
 
     .socials {
       justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .bottom {
+      font-size: 0.8rem;
+      padding-top: 2rem;
     }
   }
 }
