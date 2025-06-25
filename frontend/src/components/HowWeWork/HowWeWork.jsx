@@ -47,10 +47,14 @@ const HowWeWork = () => {
         Zajrzyj za kulisy naszej pracy – proces naprawy spawarek laserowych krok po kroku.
       </p>
 
-      <div className={styles.carouselWrapper} data-aos="fade-left" data-aos-delay="200">
+      <div
+        className={styles.carouselWrapper}
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
         <div className={styles.carousel} ref={carouselRef}>
           {images.map((img, i) => (
-            <div className={styles.slide} key={i} data-aos="zoom-in" data-aos-delay={100 + i * 50}>
+            <div className={styles.slide} key={i}>
               <img src={img} alt={`Krok ${i + 1}`} />
             </div>
           ))}
