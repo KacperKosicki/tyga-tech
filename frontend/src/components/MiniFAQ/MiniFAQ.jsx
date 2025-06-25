@@ -13,7 +13,8 @@ const faqs = [
   },
   {
     question: 'Jakie urządzenia naprawiacie?',
-    answer: 'Specjalizujemy się w laserach CO₂, światłowodowych i maszynach CNC.',
+    answer:
+      'Specjalizujemy się w serwisie spawarek laserowych oraz oczyszczarek laserowych.',
   },
 ];
 
