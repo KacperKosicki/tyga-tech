@@ -14,28 +14,56 @@ const images = [
 
 const HowWeWork = () => {
   const carouselRef = useRef(null);
-  let index = 0;
+  const indexRef = useRef(0);
+  const timeoutRef = useRef(null);
+  const intervalRef = useRef(null);
 
   useEffect(() => {
     const container = carouselRef.current;
     if (!container) return;
 
-    const interval = setInterval(() => {
+    const scrollToNext = () => {
       const slide = container.querySelector(`.${styles.slide}`);
       if (!slide) return;
 
-      const slideWidth = slide.offsetWidth + 16; // +gap
-      index++;
+      const slideWidth = slide.offsetWidth + 16;
+      indexRef.current++;
 
-      if (index >= images.length) {
-        index = 0;
+      if (indexRef.current >= images.length) {
+        indexRef.current = 0;
         container.scrollTo({ left: 0, behavior: 'auto' });
       } else {
-        container.scrollTo({ left: index * slideWidth, behavior: 'smooth' });
+        container.scrollTo({
+          left: indexRef.current * slideWidth,
+          behavior: 'smooth',
+        });
       }
-    }, 4000);
+    };
 
-    return () => clearInterval(interval);
+    const startAutoScroll = () => {
+      clearInterval(intervalRef.current);
+      intervalRef.current = setInterval(scrollToNext, 4000);
+    };
+
+    const pauseAutoScroll = () => {
+      clearInterval(intervalRef.current);
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => {
+        startAutoScroll();
+      }, 10000); // 10s bez dotyku = wznów auto-scroll
+    };
+
+    container.addEventListener('touchstart', pauseAutoScroll);
+    container.addEventListener('mousedown', pauseAutoScroll);
+
+    startAutoScroll();
+
+    return () => {
+      clearInterval(intervalRef.current);
+      clearTimeout(timeoutRef.current);
+      container.removeEventListener('touchstart', pauseAutoScroll);
+      container.removeEventListener('mousedown', pauseAutoScroll);
+    };
   }, []);
 
   return (
