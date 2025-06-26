@@ -5,7 +5,7 @@ const CoverageMap = () => {
     return (
         <section className={styles.coverage}>
             <div className={styles.container}>
-                <h2 data-aos="fade-up">Działamy na terenie całej Polski</h2>
+                <h2 data-aos="fade-up">Działamy na terenie całej Polski!</h2>
                 <p data-aos="fade-up" data-aos-delay="150">
                     Niezależnie od lokalizacji – oferujemy serwis, naprawy i doradztwo w całym kraju. Obsługujemy firmy i klientów indywidualnych.
                 </p>
