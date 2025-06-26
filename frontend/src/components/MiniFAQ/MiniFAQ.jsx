@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './MiniFAQ.module.scss';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaChevronDown } from 'react-icons/fa';
 
 const faqs = [
   {
@@ -26,7 +26,7 @@ const MiniFAQ = () => {
       <div className={styles.container}>
         <h2 data-aos="fade-up">Najczęstsze pytania</h2>
 
-        <ul className={styles.faqList}>
+        <ul className={styles.faqList} data-aos="fade-up" data-aos-delay="100">
           {faqs.map((faq, i) => (
             <li
               key={i}
@@ -35,7 +35,7 @@ const MiniFAQ = () => {
             >
               <div className={styles.question}>
                 <span>{faq.question}</span>
-                {openIndex === i ? <FaChevronUp /> : <FaChevronDown />}
+                <FaChevronDown className={openIndex === i ? styles.rotated : ''} />
               </div>
               {openIndex === i && (
                 <div className={styles.answer}>{faq.answer}</div>

@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import styles from './ReportForm.module.scss';
 import { Link } from 'react-router-dom';
 
 const ReportForm = () => {
+  const fileInputRef = useRef(null);
+
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -10,16 +12,48 @@ const ReportForm = () => {
     email: '',
     model: '',
     description: '',
-    file: null,
+    files: [],
     acceptPrivacy: false,
   });
 
   const handleChange = (e) => {
     const { name, value, files, type, checked } = e.target;
+
+    if (name === 'files') {
+      const existingNames = formData.files.map((file) => file.name);
+      const newFiles = Array.from(files).filter(
+        (file) => !existingNames.includes(file.name)
+      );
+
+      if (newFiles.length === 0) {
+        alert('Ten plik zostały już dodany.');
+        fileInputRef.current.value = null;
+        return;
+      }
+
+      const allowedFiles = newFiles.slice(0, 5 - formData.files.length);
+
+      setFormData((prev) => ({
+        ...prev,
+        files: [...prev.files, ...allowedFiles],
+      }));
+
+      fileInputRef.current.value = null;
+      return;
+    }
+
     setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : files ? files[0] : value,
+      [name]: type === 'checkbox' ? checked : value,
     }));
+  };
+
+  const handleRemoveFile = (index) => {
+    setFormData((prev) => ({
+      ...prev,
+      files: prev.files.filter((_, i) => i !== index),
+    }));
+    fileInputRef.current.value = null;
   };
 
   const handleSubmit = (e) => {
@@ -48,7 +82,34 @@ const ReportForm = () => {
           <input type="email" name="email" placeholder="Adres email" required onChange={handleChange} />
           <input type="text" name="model" placeholder="Model maszyny" onChange={handleChange} />
           <textarea name="description" placeholder="Opis usterki..." required rows={5} onChange={handleChange}></textarea>
-          <input type="file" name="file" accept="image/*" onChange={handleChange} />
+
+          <label className={styles.fileInputLabel}>
+            <span>Kliknij, aby dodać plik | Dodano {formData.files.length} z 5 plików</span>
+            <input
+              type="file"
+              name="files"
+              accept="image/*"
+              multiple
+              onChange={handleChange}
+              disabled={formData.files.length >= 5}
+              ref={fileInputRef}
+              hidden
+            />
+          </label>
+
+          <div className={styles.fileList}>
+            {formData.files.map((file, index) => (
+              <div key={index} className={styles.fileItem}>
+                <div className={styles.preview}>
+                  <img src={URL.createObjectURL(file)} alt={`preview-${index}`} />
+                  <span>{file.name}</span>
+                </div>
+                <button type="button" onClick={() => handleRemoveFile(index)} title="Usuń plik">
+                  &times;
+                </button>
+              </div>
+            ))}
+          </div>
 
           <label className={styles.checkbox}>
             <input
@@ -65,7 +126,10 @@ const ReportForm = () => {
             </span>
           </label>
 
-          <button type="submit">Wyślij zgłoszenie</button>
+          <button type="submit" className={styles.submitButton}>
+            Wyślij zgłoszenie
+          </button>
+
         </form>
       </div>
     </section>

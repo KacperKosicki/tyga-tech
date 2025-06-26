@@ -47,17 +47,17 @@
     margin-bottom: 3rem;
 
     li {
-      position: relative;
-      padding-left: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
       margin-bottom: 1rem;
       font-size: 1.05rem;
       transition: $transition;
 
-      &::before {
-        content: '🔧';
-        position: absolute;
-        left: 0;
-        top: 0;
+      .icon {
+        color: $color-primary;
+        font-size: 1.1rem;
+        flex-shrink: 0;
         transition: transform 0.3s ease;
       }
 
@@ -65,7 +65,7 @@
         transform: translateX(4px);
       }
 
-      &:hover::before {
+      &:hover .icon {
         transform: rotate(15deg);
       }
     }

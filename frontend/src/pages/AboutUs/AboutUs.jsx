@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './AboutUs.module.scss';
+import { FaWrench } from 'react-icons/fa';
 
 const AboutUs = () => {
   return (
@@ -18,11 +19,18 @@ const AboutUs = () => {
         </p>
 
         <ul data-aos="fade-up" data-aos-delay="100">
-          <li>Diagnostyka, naprawa i konserwacja spawarek laserowych</li>
-          <li>Serwis i optymalizacja pracy oczyszczarek laserowych</li>
-          <li>Wymiana podzespołów, kalibracja i testy wydajności</li>
-          <li>Doradztwo techniczne i wsparcie wdrożeniowe</li>
-          <li>Dostawa części zamiennych i akcesoriów do urządzeń laserowych</li>
+          {[
+            'Diagnostyka, naprawa i konserwacja spawarek laserowych',
+            'Serwis i optymalizacja pracy oczyszczarek laserowych',
+            'Wymiana podzespołów, kalibracja i testy wydajności',
+            'Doradztwo techniczne i wsparcie wdrożeniowe',
+            'Dostawa części zamiennych i akcesoriów do urządzeń laserowych',
+          ].map((text, i) => (
+            <li key={i}>
+              <FaWrench className={styles.icon} />
+              {text}
+            </li>
+          ))}
         </ul>
       </div>
     </section>
