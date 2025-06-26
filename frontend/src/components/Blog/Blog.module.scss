@@ -195,7 +195,7 @@
   padding: 0.6rem 1.2rem;
   background-color: $color-primary;
   color: white;
-  border-radius: 50px;
+  border-radius: $radius;
   font-size: 0.9rem;
   text-align: center;
   transition: $transition;
@@ -217,7 +217,7 @@
   padding: 0.6rem 1.2rem;
   background-color: gray;
   color: white;
-  border-radius: 50px;
+  border-radius: $radius;
   font-size: 0.9rem;
   text-align: center;
   opacity: 0.6;
