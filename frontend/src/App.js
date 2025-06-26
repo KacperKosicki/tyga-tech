@@ -17,6 +17,7 @@ import Contact from './components/Contact/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import CookiesBanner from './components/CookiesBanner/CookiesBanner';
 import Offer from './pages/Offer/Offer';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'; // 👈 import
 
 function App() {
   useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop /> {/* 👈 dodane */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
