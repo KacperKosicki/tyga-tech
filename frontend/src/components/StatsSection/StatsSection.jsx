@@ -4,7 +4,7 @@ import styles from './StatsSection.module.scss';
 const StatsSection = () => {
   const stats = [
     { value: 500, label: 'Naprawionych urządzeń' },
-    { value: 10, label: 'Lat doświadczenia' },
+    { value: 1, label: 'Lat doświadczenia' },
     { value: 24, label: 'Czas reakcji (h)' },
     { value: 100, label: 'Zadowolonych klientów' },
   ];

@@ -44,7 +44,7 @@
     font-size: 1.15rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transition: color $transition;
+    transition: color 0.5s ease;
 
     &::after {
       content: '';
@@ -55,13 +55,14 @@
       width: 0%;
       background: linear-gradient(90deg, $color-primary, lighten($color-primary, 10%));
       border-radius: 2px;
-      transition: width $transition;
+      transition: width 0.5s ease;
     }
 
     &:hover::after {
       width: 100%;
     }
   }
+
 }
 
 .burger {

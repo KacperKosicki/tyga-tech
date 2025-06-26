@@ -142,7 +142,7 @@
     font-size: 1.15rem;
     text-transform: uppercase;
     border-radius: $radius;
-    transition: all $transition;
+    transition: $transition;
     border: 2px solid transparent;
     text-decoration: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -156,6 +156,7 @@
 
     &:hover {
         background-color: darken($color-primary, 10%);
+        transform: scale(1.05);
     }
 }
 
@@ -166,6 +167,7 @@
 
     &:hover {
         background-color: rgba($color-primary, 0.1);
+        transform: scale(1.05);
     }
 }
 

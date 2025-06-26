@@ -38,14 +38,12 @@ const BlogPost = () => {
           <p data-aos="fade-up" data-aos-delay="300">
             Być może został usunięty lub zmienił adres.
           </p>
-          <Link
-            to="/blog"
-            className={styles.button}
-            data-aos="fade-up"
-            data-aos-delay="500"
-          >
-            Wróć do bloga
-          </Link>
+
+          <div data-aos="fade-up" data-aos-delay="500">
+            <Link to="/blog" className={styles.button}>
+              Wróć do bloga
+            </Link>
+          </div>
         </div>
       </section>
     );

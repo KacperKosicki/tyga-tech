@@ -4,6 +4,7 @@ import InfoSection from '../../components/InfoSection/InfoSection';
 import MiniFAQ from '../../components/MiniFAQ/MiniFAQ';
 import StatsSection from '../../components/StatsSection/StatsSection';
 import HowWeWork from '../../components/HowWeWork/HowWeWork';
+import CTA from '../../components/CTA/CTA';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         <InfoSection />
         <StatsSection />
         <HowWeWork />
+        <CTA />
         <MiniFAQ />
       </section>
     </>

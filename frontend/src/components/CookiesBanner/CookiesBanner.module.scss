@@ -30,10 +30,11 @@
     font-size: 0.9rem;
     border-radius: $radius;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: $transition;
 
     &:hover {
       background: darken($color-primary, 10%);
+      transform: scale(1.05);
     }
   }
 }

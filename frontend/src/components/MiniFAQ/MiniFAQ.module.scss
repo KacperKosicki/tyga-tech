@@ -32,7 +32,7 @@
         border-radius: $radius;
         padding: 1.2rem 1.5rem;
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
-        transition: all $transition;
+        transition: $transition;
         cursor: pointer;
         width: 100%;
         max-width: 700px;
@@ -61,6 +61,7 @@
 
         &:hover {
             box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+            transform: scale(1.05);
         }
     }
 

@@ -16,10 +16,11 @@
     color: $color-primary;
     font-weight: bold;
     font-size: 0.95rem;
-    transition: color $transition;
+    transition: $transition;
 
     &:hover {
       color: darken($color-primary, 10%);
+      transform: scale(1.05);
     }
   }
 
@@ -134,10 +135,12 @@
       padding: 0.9rem 1.6rem;
       border-radius: $radius;
       text-decoration: none;
-      transition: background $transition;
+      cursor: pointer;
+      transition: $transition;
 
       &:hover {
         background: darken($color-primary, 10%);
+        transform: scale(1.05);
       }
     }
   }

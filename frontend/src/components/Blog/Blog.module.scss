@@ -69,10 +69,11 @@
       cursor: pointer;
       font-size: 0.95rem;
       color: $color-text;
-      transition: color $transition;
+      transition: $transition;
 
       &:hover {
         color: $color-primary;
+        transform: scale(1.05);
       }
 
       &.active {
@@ -197,10 +198,11 @@
   border-radius: 50px;
   font-size: 0.9rem;
   text-align: center;
-  transition: background-color $transition;
+  transition: $transition;
 
   &:hover {
     background-color: darken($color-primary, 10%);
+    transform: scale(1.05);
   }
 }
 
