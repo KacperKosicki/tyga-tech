@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 const Offer = () => {
   return (
     <section className={styles.offer}>
-      <div className={styles.bgImageWrapper}>
+      <div className={styles.bgImageWrapper} data-aos="zoom-in">
         <img src="/images/offer.png" alt="Laser Serwis" />
       </div>
 
       <div className={styles.container}>
-        <h2>Nasza oferta</h2>
+        <h2 data-aos="fade-up">Nasza oferta</h2>
         <div className={styles.grid}>
-          <div className={styles.card}>
+          <div className={styles.card} data-aos="fade-up" data-aos-delay="0">
             <FaTools className={styles.icon} />
             <h3>Serwis spawarek laserowych</h3>
             <p>
@@ -21,7 +21,7 @@ const Offer = () => {
             </p>
           </div>
 
-          <div className={styles.card}>
+          <div className={styles.card} data-aos="fade-up" data-aos-delay="100">
             <FaMagic className={styles.icon} />
             <h3>Serwis oczyszczarek laserowych</h3>
             <p>
@@ -29,7 +29,7 @@ const Offer = () => {
             </p>
           </div>
 
-          <div className={styles.card}>
+          <div className={styles.card} data-aos="fade-up" data-aos-delay="200">
             <FaCheckCircle className={styles.icon} />
             <h3>Dlaczego my?</h3>
             <p>
@@ -38,11 +38,11 @@ const Offer = () => {
           </div>
         </div>
 
-        <p className={styles.contact}>
+        <p className={styles.contact} data-aos="fade-up" data-aos-delay="300">
           <Link to="/kontakt">Skontaktuj się z nami</Link>, aby uzyskać wycenę lub umówić serwis.
         </p>
 
-        <p className={styles.seo}>
+        <p className={styles.seo} data-aos="fade-up" data-aos-delay="400">
           TYGA-TECH – profesjonalny serwis urządzeń laserowych. Działamy na terenie całej Polski, oferując naprawy, przeglądy i pełne wsparcie techniczne dla firm.
         </p>
       </div>
