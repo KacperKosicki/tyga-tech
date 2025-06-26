@@ -76,12 +76,12 @@ const ReportForm = () => {
       <div className={styles.container}>
         <h2 data-aos="fade-up">Zgłoszenie usterki</h2>
         <form onSubmit={handleSubmit} className={styles.form} data-aos="fade-up">
-          <input type="text" name="name" placeholder="Imię i nazwisko" required onChange={handleChange} />
-          <input type="text" name="company" placeholder="Nazwa firmy" onChange={handleChange} />
-          <input type="tel" name="phone" placeholder="Numer telefonu" required onChange={handleChange} />
-          <input type="email" name="email" placeholder="Adres email" required onChange={handleChange} />
-          <input type="text" name="model" placeholder="Model maszyny" onChange={handleChange} />
-          <textarea name="description" placeholder="Opis usterki..." required rows={5} onChange={handleChange}></textarea>
+          <input type="text" name="name" placeholder="Imię i nazwisko *" required onChange={handleChange} />
+          <input type="text" name="company" placeholder="Nazwa firmy (opcjonalne)" onChange={handleChange} />
+          <input type="tel" name="phone" placeholder="Numer telefonu (opcjonalne)" onChange={handleChange} />
+          <input type="email" name="email" placeholder="Adres email *" required onChange={handleChange} />
+          <input type="text" name="model" placeholder="Model maszyny (opcjonalne)" onChange={handleChange} />
+          <textarea name="description" placeholder="Opis usterki... *" required rows={5} onChange={handleChange}></textarea>
 
           <label className={styles.fileInputLabel}>
             <span>Kliknij, aby dodać zdjęcie | Dodano {formData.files.length} z 5 zdjęć</span>

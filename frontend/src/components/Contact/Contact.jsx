@@ -39,10 +39,10 @@ const Contact = () => {
       <div className={styles.container}>
         <h2 data-aos="fade-up" data-aos-delay="100">Skontaktuj się z nami</h2>
         <form onSubmit={handleSubmit} className={styles.form} data-aos="fade-up" data-aos-delay="200">
-          <input type="text" name="name" placeholder="Imię i nazwisko" required onChange={handleChange} />
-          <input type="email" name="email" placeholder="Adres email" required onChange={handleChange} />
-          <input type="tel" name="phone" placeholder="Numer telefonu" onChange={handleChange} />
-          <textarea name="message" placeholder="Wiadomość..." required rows={5} onChange={handleChange}></textarea>
+          <input type="text" name="name" placeholder="Imię i nazwisko *" required onChange={handleChange} />
+          <input type="email" name="email" placeholder="Adres email *" required onChange={handleChange} />
+          <input type="tel" name="phone" placeholder="Numer telefonu (opcjonalne)" onChange={handleChange} />
+          <textarea name="message" placeholder="Wiadomość... *" required rows={5} onChange={handleChange}></textarea>
 
           <label className={styles.checkbox}>
             <input
