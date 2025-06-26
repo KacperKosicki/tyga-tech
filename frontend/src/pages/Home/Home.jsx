@@ -5,6 +5,7 @@ import MiniFAQ from '../../components/MiniFAQ/MiniFAQ';
 import StatsSection from '../../components/StatsSection/StatsSection';
 import HowWeWork from '../../components/HowWeWork/HowWeWork';
 import CTA from '../../components/CTA/CTA';
+import CoverageMap from '../../components/CoverageMap/CoverageMap';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         <InfoSection />
         <StatsSection />
         <HowWeWork />
+        <CoverageMap />
         <CTA />
         <MiniFAQ />
       </section>

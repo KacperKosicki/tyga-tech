@@ -1,0 +1,62 @@
+@import '../../styles/variables';
+
+.testimonials {
+  background-color: $color-bg;
+  padding: 4rem 2rem;
+  text-align: center;
+
+  .container {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: $color-primary;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .card {
+    background: white;
+    border-radius: $radius;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 320px;
+    transition: transform 0.3s ease;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  .text {
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .stars {
+    color: gold;
+    margin-bottom: 1rem;
+
+    svg {
+      font-size: 1rem;
+    }
+  }
+
+  .name {
+    font-weight: bold;
+  }
+
+  .role {
+    font-size: 0.85rem;
+    color: $color-accent;
+  }
+}
