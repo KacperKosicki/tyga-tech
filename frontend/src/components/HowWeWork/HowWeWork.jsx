@@ -50,7 +50,7 @@ const HowWeWork = () => {
       clearTimeout(timeoutRef.current);
       timeoutRef.current = setTimeout(() => {
         startAutoScroll();
-      }, 10000); // 10s bez dotyku = wznów auto-scroll
+      }, 10000);
     };
 
     container.addEventListener('touchstart', pauseAutoScroll);

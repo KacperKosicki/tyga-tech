@@ -66,8 +66,8 @@
     line-height: 1.8;
     color: $color-text;
 
-    // Stylowanie PortableText
-    h2, h3 {
+    h2,
+    h3 {
       font-family: $font-heading;
       color: $color-primary;
       margin-top: 2rem;

@@ -80,17 +80,14 @@ const Blog = () => {
                   <div className={styles.fakeBadge}>NOWY POST!</div>
                 )}
 
-                {/* Fallback: placeholder jeśli brak obrazka */}
                 <div className={styles.imageWrapper}>
                   <img
                     src={post.image || '/blog/no-image.png'}
                     alt={post.title || 'Brak tytułu'}
                   />
-
                 </div>
 
                 <div className={styles.content}>
-                  {/* Fallback: jeśli brak daty */}
                   <div className={styles.meta}>
                     <span>
                       {post.date
@@ -99,13 +96,10 @@ const Blog = () => {
                     </span>
                   </div>
 
-                  {/* Fallback: brak tytułu */}
                   <h2>{post.title || 'Brak tytułu'}</h2>
 
-                  {/* Fallback: brak zajawki */}
                   <p>{post.excerpt || 'Brak opisu tego wpisu.'}</p>
 
-                  {/* Fallback: brak tagów */}
                   {post.tags?.length ? (
                     <ul className={styles.tags}>
                       {post.tags.map((tag, i) => (
@@ -120,7 +114,6 @@ const Blog = () => {
 
                   <div className={styles.separator}></div>
 
-                  {/* Fallback: jeśli brak slug */}
                   {post.slug?.current ? (
                     <Link to={`/blog/${post.slug.current}`} className={styles.button}>
                       Czytaj więcej...

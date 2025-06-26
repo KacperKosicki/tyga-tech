@@ -4,7 +4,6 @@ import InfoSection from '../../components/InfoSection/InfoSection';
 import MiniFAQ from '../../components/MiniFAQ/MiniFAQ';
 import StatsSection from '../../components/StatsSection/StatsSection';
 import HowWeWork from '../../components/HowWeWork/HowWeWork';
-import Footer from '../../components/Footer/Footer'; // dodaj jeśli jeszcze nie było
 
 const Home = () => {
   return (

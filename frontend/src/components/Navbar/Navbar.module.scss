@@ -107,7 +107,7 @@
 
 @media (max-width: 768px) {
   .navbar .container {
-    padding: 0 3rem; // lub 2rem jeśli chcesz mocniej odsunąć od krawędzi
-    justify-content: space-between; // lepsze niż space-around na małych ekranach
+    padding: 0 3rem;
+    justify-content: space-between;
   }
 }

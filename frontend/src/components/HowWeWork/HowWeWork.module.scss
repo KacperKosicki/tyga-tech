@@ -20,9 +20,9 @@
   }
 
   .carouselWrapper {
-    max-width: 1032px; // 2 * 500 + gap (16px) + marginesy
+    max-width: 1032px;
     margin: 0 auto;
-    overflow: hidden; // ← TO JEST KLUCZ
+    overflow: hidden;
   }
 
   .carousel {

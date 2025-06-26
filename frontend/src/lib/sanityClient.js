@@ -1,4 +1,3 @@
-// src/lib/sanityClient.js
 import sanityClient from '@sanity/client';
 
 export default sanityClient({
