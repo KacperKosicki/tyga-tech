@@ -26,7 +26,7 @@ const ReportForm = () => {
       );
 
       if (newFiles.length === 0) {
-        alert('Ten plik zostały już dodany.');
+        alert('To zdjęcie zostało już dodane!');
         fileInputRef.current.value = null;
         return;
       }
@@ -84,7 +84,7 @@ const ReportForm = () => {
           <textarea name="description" placeholder="Opis usterki..." required rows={5} onChange={handleChange}></textarea>
 
           <label className={styles.fileInputLabel}>
-            <span>Kliknij, aby dodać plik | Dodano {formData.files.length} z 5 plików</span>
+            <span>Kliknij, aby dodać zdjęcie | Dodano {formData.files.length} z 5 zdjęć</span>
             <input
               type="file"
               name="files"
@@ -104,7 +104,7 @@ const ReportForm = () => {
                   <img src={URL.createObjectURL(file)} alt={`preview-${index}`} />
                   <span>{file.name}</span>
                 </div>
-                <button type="button" onClick={() => handleRemoveFile(index)} title="Usuń plik">
+                <button type="button" onClick={() => handleRemoveFile(index)} title="Usuń zdjęcie">
                   &times;
                 </button>
               </div>
