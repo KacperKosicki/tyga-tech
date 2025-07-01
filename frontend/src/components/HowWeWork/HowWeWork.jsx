@@ -72,7 +72,7 @@ const HowWeWork = () => {
         Tak pracujemy w TYGA-TECH
       </h2>
       <p className={styles.description} data-aos="fade-up" data-aos-delay="100">
-        Zajrzyj za kulisy naszej pracy – proces naprawy spawarek laserowych krok po kroku.
+        Zajrzyj za kulisy naszej pracy.
       </p>
 
       <div
