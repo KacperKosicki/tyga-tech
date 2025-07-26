@@ -12,7 +12,7 @@ const CTA = () => {
             Jesteśmy dostępni w całej Polsce. Zadzwoń lub napisz do nas — działamy błyskawicznie!
           </p>
           <a href="tel:501580715" className={styles.phone}>
-            <FaPhoneAlt /> 501 580 715
+            <FaPhoneAlt /> 603 877 097
           </a>
         </div>
         <div className={styles.right}>
