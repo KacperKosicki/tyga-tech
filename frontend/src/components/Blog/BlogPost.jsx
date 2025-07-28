@@ -36,7 +36,7 @@ const BlogPost = () => {
             Ups! Nie znaleźliśmy takiego posta.
           </h2>
           <p data-aos="fade-up" data-aos-delay="300">
-            Być może został usunięty lub zmienił adres.
+            Być może został on usunięty lub zmienił adres.
           </p>
 
           <div data-aos="fade-up" data-aos-delay="500">
