@@ -35,7 +35,7 @@ const Footer = () => {
             <ul>
               <li><FaMapMarkerAlt /> ul. Warsztatowa 13, Krzyż Wlkp.</li>
               <li><FaPhoneAlt /> 603-877-097</li>
-              <li><FaEnvelope /> kontakt@tyga-tech.pl</li>
+              <li><FaEnvelope /> kw.tygatech@gmail.com</li>
             </ul>
             <div className={styles.socials}>
               <a href="https://facebook.com/tyga.tech.serwis.urzadzen.laserowych" target="_blank" rel="noreferrer">
@@ -50,7 +50,7 @@ const Footer = () => {
 
         <div className={styles.bottom}>
           <p>
-            © {new Date().getFullYear()} TYGA-TECH. Wszelkie prawa zastrzeżone.{' '}
+            © {new Date().getFullYear()} tyga.com.pl. Wszelkie prawa zastrzeżone.{' '}
             <span className={styles.separator}>|</span>{' '}
             <Link to="/polityka-prywatnosci" className={styles.privacy}>
               Polityka prywatności
