@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './Contact.module.scss';
 import { Link } from 'react-router-dom';
+import emailjs from 'emailjs-com'; // ⬅️ Import EmailJS
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,13 +22,39 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!formData.acceptPrivacy) {
       alert('Aby wysłać wiadomość, musisz zaakceptować politykę prywatności.');
       return;
     }
 
-    console.log(formData);
-    alert('Wiadomość została wysłana!');
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+    };
+
+    emailjs.send(
+      'service_eitb52o', // ← Twój Service ID
+      'template_grxwv7b', // ← Nazwa szablonu EmailJS (utwórz go jeśli jeszcze nie ma)
+      templateParams,
+      '_nZdU2dx108RYVXv_' // ← Twój Public Key
+    )
+      .then(() => {
+        alert('Wiadomość została wysłana!');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+          acceptPrivacy: false,
+        });
+      })
+      .catch((error) => {
+        console.error('Błąd EmailJS:', error);
+        alert('Wystąpił błąd podczas wysyłania wiadomości.');
+      });
   };
 
   return (
@@ -39,10 +66,10 @@ const Contact = () => {
       <div className={styles.container}>
         <h2 data-aos="fade-up" data-aos-delay="100">Skontaktuj się z nami</h2>
         <form onSubmit={handleSubmit} className={styles.form} data-aos="fade-up" data-aos-delay="200">
-          <input type="text" name="name" placeholder="Imię i nazwisko *" required onChange={handleChange} />
-          <input type="email" name="email" placeholder="Adres email *" required onChange={handleChange} />
-          <input type="tel" name="phone" placeholder="Numer telefonu (opcjonalne)" onChange={handleChange} />
-          <textarea name="message" placeholder="Wiadomość... *" required rows={5} onChange={handleChange}></textarea>
+          <input type="text" name="name" placeholder="Imię i nazwisko *" required value={formData.name} onChange={handleChange} />
+          <input type="email" name="email" placeholder="Adres email *" required value={formData.email} onChange={handleChange} />
+          <input type="tel" name="phone" placeholder="Numer telefonu (opcjonalne)" value={formData.phone} onChange={handleChange} />
+          <textarea name="message" placeholder="Wiadomość... *" required rows={5} value={formData.message} onChange={handleChange}></textarea>
 
           <label className={styles.checkbox}>
             <input

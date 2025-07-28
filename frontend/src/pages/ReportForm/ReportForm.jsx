@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import styles from './ReportForm.module.scss';
 import { Link } from 'react-router-dom';
+import emailjs from 'emailjs-com'; // ← dodane
 
 const ReportForm = () => {
   const fileInputRef = useRef(null);
@@ -58,13 +59,47 @@ const ReportForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!formData.acceptPrivacy) {
       alert('Aby wysłać zgłoszenie, musisz zaakceptować politykę prywatności.');
       return;
     }
 
-    console.log(formData);
-    alert('Zgłoszenie wysłane!');
+    const fileList = formData.files.map((file) => file.name).join(', ');
+
+    const templateParams = {
+      name: formData.name,
+      company: formData.company,
+      phone: formData.phone,
+      email: formData.email,
+      model: formData.model,
+      description: formData.description,
+      fileList: fileList || 'Brak zdjęć',
+    };
+
+    emailjs.send(
+      'service_eitb52o',      // ← Twój Service ID
+      'template_rola5xi',      // ← Szablon zgłoszenia
+      templateParams,
+      '_nZdU2dx108RYVXv_'     // ← Twój Public Key
+    )
+      .then(() => {
+        alert('Zgłoszenie zostało wysłane!');
+        setFormData({
+          name: '',
+          company: '',
+          phone: '',
+          email: '',
+          model: '',
+          description: '',
+          files: [],
+          acceptPrivacy: false,
+        });
+      })
+      .catch((error) => {
+        console.error('Błąd EmailJS:', error);
+        alert('Wystąpił błąd podczas wysyłania zgłoszenia.');
+      });
   };
 
   return (
@@ -76,12 +111,12 @@ const ReportForm = () => {
       <div className={styles.container}>
         <h2 data-aos="fade-up">Zgłoszenie usterki</h2>
         <form onSubmit={handleSubmit} className={styles.form} data-aos="fade-up">
-          <input type="text" name="name" placeholder="Imię i nazwisko *" required onChange={handleChange} />
-          <input type="text" name="company" placeholder="Nazwa firmy (opcjonalne)" onChange={handleChange} />
-          <input type="tel" name="phone" placeholder="Numer telefonu (opcjonalne)" onChange={handleChange} />
-          <input type="email" name="email" placeholder="Adres email *" required onChange={handleChange} />
-          <input type="text" name="model" placeholder="Model maszyny (opcjonalne)" onChange={handleChange} />
-          <textarea name="description" placeholder="Opis usterki... *" required rows={5} onChange={handleChange}></textarea>
+          <input type="text" name="name" placeholder="Imię i nazwisko *" required value={formData.name} onChange={handleChange} />
+          <input type="text" name="company" placeholder="Nazwa firmy (opcjonalne)" value={formData.company} onChange={handleChange} />
+          <input type="tel" name="phone" placeholder="Numer telefonu (opcjonalne)" value={formData.phone} onChange={handleChange} />
+          <input type="email" name="email" placeholder="Adres email *" required value={formData.email} onChange={handleChange} />
+          <input type="text" name="model" placeholder="Model maszyny (opcjonalne)" value={formData.model} onChange={handleChange} />
+          <textarea name="description" placeholder="Opis usterki... *" required rows={5} value={formData.description} onChange={handleChange}></textarea>
 
           <label className={styles.fileInputLabel}>
             <span>Kliknij, aby dodać zdjęcie | Dodano {formData.files.length} z 5 zdjęć</span>
@@ -129,7 +164,6 @@ const ReportForm = () => {
           <button type="submit" className={styles.submitButton}>
             Wyślij zgłoszenie
           </button>
-
         </form>
       </div>
     </section>
